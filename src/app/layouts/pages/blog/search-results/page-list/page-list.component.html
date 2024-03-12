@@ -1,0 +1,69 @@
+<!--
+	************************************************************
+	* CONTENT SECTION 25
+	************************************************************ -->
+	<section id="content25" class="pos-rel pd-tb-medium pd-t-0 bg-default overflow-none" data-ckav-sm="align-c pd-tb-medium">
+		<div class="container">
+            <!--=================================
+			= CALL TO ACTION SECTION
+            ==================================-->
+            <div class="pd-60 bg-white -mr-t-100 mr-b-100 shadow-xlarge" data-ckav-sm="mr-0 pd-30 mr-b-30">
+                <div class="row align-items-center">
+                    <div class="col-md-12 align-l" data-ckav-sm="align-c">
+                        <span *ngIf="(totalItems === 0) || (totalItems === 1)" class="before-title fs18 txt-dark f-2 mr-b-0" data-ckav-sm="fs16 mr-b-20">{{totalItems}} résultat</span>
+                        <span *ngIf="(totalItems > 1)" class="before-title fs18 txt-dark f-2 mr-b-0" data-ckav-sm="fs16 mr-b-20">{{totalItems}} résultats</span>
+                        <br>
+                        <div class="row" *ngIf="(totalItems > 0)">
+                            <div class="col-md-12" *ngFor="let article of articles">
+                                <!-- BLOG -->
+                                <div class="info-obj img-t g30 align-l mr-0">
+                                    <div class="img"><a [routerLink]="['/actualités/', article.id]"><img [src]="article.image" alt="image"></a></div>
+                                    <div class="info">
+                                        <div class="row gt60 row-sep bdr-op-1 mb20">
+                                            <div class="col-md-3">
+                                                <p class="fs12 mr-b-10"><span class="tag-text">{{ article.created | date: 'd MMM y' }}</span></p>
+                                                <p class="fs12 mr-b-6 italic" *ngFor="let user of users"><i class="fs14 mr-r-6 fa fa-user"></i><a>Editeur</a></p>
+                                                <hr class="mr-tb-10">
+                                                <p class="fs12 mr-b-6 italic">
+                                                    <i class="fs14 mr-r-6 fa fa-tags"></i>
+                                                    <em *ngFor="let tag of tags">
+                                                        <em *ngFor="let articleTag of article.tags">
+                                                            <a [routerLink]="['/actualités/tags/', tag.id]" *ngIf="tag.id === articleTag"> {{tag.name}}, </a>
+                                                        </em>
+                                                    </em>
+                                                </p>
+                                                <hr class="mr-tb-10">
+                                                <p class="fs12 mr-b-6 italic" *ngFor="let category of categories">
+                                                    <i class="fs14 mr-r-6 fa fa-paperclip" *ngIf="category.id === article.category"></i>
+                                                    <a [routerLink]="['/actualités/categories/', category.id]" *ngIf="category.id === article.category">{{category.name}}</a>
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="col-md-9">
+                                                <h3 class="fs16 mr-b-10 f-1 bold-4"><a [routerLink]="['/actualités/', article.id]" target="_blank">{{article.title}}</a></h3>
+                                                <p>{{article.description}}</p>
+            
+                                                <a [routerLink]="['/actualités/', article.id]" class="btn btn-default mini">En savoir plus...</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- / BLOG -->
+    
+                                <hr class="mr-tb-60">
+                            </div>
+                        </div>
+                        <div *ngIf="totalPages > 1" class="align-c mr-t-60" data-ckav-sm="mr-t-30">
+                            <ul class="inline-grid grid-mid">
+                                <li *ngIf="currentPage > 1" class="mr-r-10"><a (click)="prev()" class="btn btn-dark bdr-glass small" data-ckav-sm="mini"><i class="fas fa-long-arrow-alt-left mr-r-4" data-ckav-sm="hide"></i> Prev</a></li>
+                                <li *ngFor="let n of numSequence(totalPages); let i = index;"><a (click)="page(i + 1)" data-ckav-sm="mini" [ngClass]="{ 'active':currentPage === i + 1 }" class="btn btn-dark bdr-op-1 mr-lr-5 small">{{i + 1}}</a></li>
+                                <li *ngIf="currentPage < totalPages" class="mr-l-10"><a (click)="next()" class="btn btn-dark bdr-glass small">Next <i class="fas fa-long-arrow-alt-right mr-l-4" data-ckav-sm="hide"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- ======= END : CALL TO ACTION SECTION =======  -->
+		</div>
+	</section>
+	<!-- ************** END : CONTENT SECTION 25 **************  -->

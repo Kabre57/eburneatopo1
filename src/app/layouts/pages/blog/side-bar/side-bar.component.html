@@ -1,0 +1,61 @@
+<!-- SEARCH -->
+<ul class="inline-grid">
+    <li><a routerLink="/actualités/rechercher" class="btn btn-dark round solid txt-upper mini"><i class="fa fa-search"></i> Recherche</a></li>
+</ul>
+<!-- / SEARCH -->
+
+<!-- CATEGORIES -->
+<div class="mr-b-mini">
+    <h3 class="title mini mr-b-10 bold-n">Categories</h3>
+
+    <ul class="list-reset list-links">
+        <li *ngFor="let cat of categories"><a [routerLink]="['/actualités/categories/', cat.id]" >{{cat.name}}</a></li>
+    </ul>
+</div>
+<!-- / CATEGORIES -->
+
+
+<!-- SUBSCRIBE -->
+<div class="mr-b-mini">
+    <h3 class="title mini mr-b-10 bold-n">Newsletters</h3>
+    <p class="op-07 mr-b-10">Subscribe for our monthly newsletter to stay updated</p>
+    <!--
+    ==================================
+    = Newsletter section
+    ==================================-->
+    <div class="subscribe-block _1 small">
+        <form action="form-data/notify-me.php" class="form-widget" data-formtype="newsletter" novalidate="novalidate">
+            <div class="form-group">
+                <button type="submit" data-loading-text="Pleae wait.." class="btn btn-dark bdr-glass"><i class="fas fa-long-arrow-alt-right fs20"></i></button>
+                <input class="form-control w100" data-label="Email" data-msg="Please enter email." type="email" name="email" placeholder="Enter your email">
+            </div>
+        </form>
+    </div><!-- ======= END : Newsletter section =======  -->
+
+</div>
+<!-- / SUBSCRIBE -->
+
+<!-- SUBSCRIBE -->
+<div class="mr-b-mini">
+    <h3 class="title mini mr-b-10 bold-4 f-1">Galérie</h3>
+    <div class="rw eq3 gt0 mb0 popgallery-widget popgallery0" id="popgallery0">
+
+    <div class="cl full-visible" *ngFor="let photo of photos | slice:0:9">
+        <figure class="hover-box1 mr-0">
+            <div class="overlay flex-cc typo-light">
+                <div class="content mr-30 z2">
+                    <!-- POPUP IMAGE AND LINK -->
+                    <a href="{{photo.image}}" class="inline-flex sq30 bg-primary bg-glass flex-cc fs20 pop-img"><i class="pe-7s-expand1"></i></a>
+                    
+                </div>
+                <b class="full-wh bg-dark op-09 z1 l0"></b>
+            </div>
+            <!-- IMAGE -->
+            <img [src]="photo.image" alt="image">
+        </figure>
+    </div>
+
+</div>
+
+</div>
+<!-- / SUBSCRIBE -->

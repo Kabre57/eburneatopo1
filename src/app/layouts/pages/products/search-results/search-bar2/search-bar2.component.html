@@ -1,0 +1,8 @@
+<div class="subscribe-block _2 large w100">
+    <form (submit)="onFormSubmit($event)">
+        <div class="form-group">
+            <button [disabled]="(term === '')" type="submit" data-loading-text="Pleae wait.." class="btn btn-primary hov-btn-dark solid f-2 txt-upper bold-4 rd-50" data-ckav-sm="fs16"><i class="fa fa-search"></i></button>
+            <input class="form-control bg-white rd-50 fs18" type="text" name="term" placeholder="Chercher un produit" (input)="term = $event.target.value">
+        </div>
+    </form>
+</div>

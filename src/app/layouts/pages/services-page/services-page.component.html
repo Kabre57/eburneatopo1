@@ -1,0 +1,129 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title xlarge f-1" data-ckav-sm="medium">Nos services</h1>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a href="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a href="#" class="txt-white">Services</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="assets/images/headers/services.jpg"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+    
+    <!--
+	************************************************************
+	* PAGE CONTENT 09
+	************************************************************ -->
+	<section id="content09" class="pos-rel pd-tb-small bg-gray" data-ckav-sm="pd-tb-small">
+		<div class="container">
+			<div class="row gt20 mb20 middle-md">
+				<div class="col-md-6">
+					<h2 class="title bold-4 f-1">Ce que nous faisons</h2>
+					<p class="title-sub small italic f-2">
+						Le GROUPE M’VOLAIS SARL est spécialisé dans la distribution de:
+					</p>
+					
+					<ul class="list-2">
+						<li *ngFor="let service of services">
+							<i class="fa fa-check"></i> {{service.name}}
+						</li>
+					</ul>
+				</div>
+				
+				<div class="col-md-5 offset-md-1">
+					<p class="mr-b-mini"><img src="assets/images/marques.jpg" alt="Image"></p>
+					<p>
+						
+						<strong>Le GROUPE M’VOLAIS SARL</strong> est spécialisé dans la distribution de matériels de grandes marques tel que :
+						<li><strong>PARKER pour les:</strong> <br>
+							FLEXIBLES (Miniers, Pétroliers, Hydraulique); TUYAUX; EMBOUTS; RACCORDS; FILTRES ENGINS.
+						</li>
+						<li><strong>STRACAU pour les:</strong> <br>
+							ROBINETERIE POUR INDUSTRIE; MESURES CONTROLE DE NIVEAU; GENIE CLIMATIQUE; ELECTROVANNE MOTORISATION REGULATION; BRIDES RACCORDS; ADDUCTION D’EAU.
+							MAXDRILL et KEMAICO pour les éléments de forages.
+							PRODUITS DE DERIVATION ET TUNNELS
+							PRODUITS DE PERCAGE DE BANC ET DE TROU LONGS.
+						</li>
+					</p>
+					
+				</div>
+			</div>
+			
+		</div>
+	</section>
+	<!-- ************** END : PAGE CONTENT 09 **************  -->	
+
+	
+
+	<!--
+	************************************************************
+	* CONTENT SECTION 07
+	************************************************************ -->
+	<section id="content07" class="pos-rel pd-tb-medium" data-ckav-sm="pd-tb-small align-c">
+		<div class="container align-c">
+			
+			<!--=================================
+			= CONTENT AREA
+			==================================-->
+			<div class="row middle-md mb20" *ngFor="let service of services">
+				
+				<div class="col-lg-6 offset-lg-1 last-lg">
+					<img [src]="service.image" class="img-responsive" alt="image">
+				</div>
+
+				<div class="col-lg-5 align-l" data-ckav-sm="align-c">
+					<div class="content">
+						<h2 class="title medium f-1 bold-4" data-ckav-sm="medium">{{service.name}}</h2>
+						<hr class="dark mr-tb-30">
+						
+						<div class="info-obj img-l g20 mini align-l">
+							<div class="info">
+								<p class="lh-7 f-2">"
+									<em [innerHTML]="service.body"></em>
+								</p>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+			</div>
+			<!-- ======= END : CONTENT AREA =======  -->
+			
+			<hr class="mr-tb-40" data-ckav-sm="mr-tb-30" data-animate-in="fadeIn">
+
+		</div>
+	</section>
+	<!-- ************** END : CONTENT SECTION 07 **************  -->	

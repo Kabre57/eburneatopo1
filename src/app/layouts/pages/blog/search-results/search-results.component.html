@@ -1,0 +1,33 @@
+<section class="pd-tb-medium flex-cc" data-ckav-sm="h-reset">
+    <div class="container">
+        <div class="w70 mr-auto align-c mr-b-60" data-ckav-sm="mr-b-30">
+            <app-search-bar2 (submitted)="onTerm($event)"></app-search-bar2>            
+        </div>
+    </div>
+    <!--=================================
+    = BACKGROUND HOLDER
+    ==================================-->
+    <div class="bg-holder full-wh z1">
+        
+        <!-- OVERLAY -->
+        <b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+        
+        <!-- PARALLAX IMAGE -->
+        <div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="images/bg-pageheader-02.jpg"></div>
+        
+        <!-- BACKGROUND IMAGE -->
+        <b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+    </div>
+    <!-- ======= END : BACKGROUND HOLDER =======  -->
+
+</section>
+<app-page-list 
+*ngIf="(isActif == true)" 
+[articles]="articles" 
+[totalItems]="totalItems"
+[totalPages]="totalPages"
+[currentPage]="currentPage" 
+[page]="page"
+[prev]="prev"
+[next]="next"
+></app-page-list>

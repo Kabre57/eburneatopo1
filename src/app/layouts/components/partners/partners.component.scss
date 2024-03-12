@@ -1,0 +1,36 @@
+.tab-pn {
+    display: none;
+  }
+  [data-tb] {
+    cursor: pointer;
+  }
+  .tabs-auto .tb-list,
+  .tab-widget .tb-list {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  .tabs-auto .tb-list > li,
+  .tab-widget .tb-list > li {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .tabs-auto .tb-pn,
+  .tab-widget .tb-pn {
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;
+  }
+  .tabs-auto .tb-pn.active,
+  .tab-widget .tb-pn.active {
+    overflow: visible;
+    height: auto;
+    opacity: 1;
+  }
+  .tabs-auto .tb-pn.active,
+  .tab-widget .tb-pn.active,
+  .tabs-auto .tb-list > li.active,
+  .tab-widget .tb-list > li.active {
+    -webkit-transition: all 0.15s;
+    transition: all 0.15s;
+  }

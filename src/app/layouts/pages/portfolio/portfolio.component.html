@@ -1,0 +1,105 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title xlarge f-1" data-ckav-sm="medium">Réalisations</h1>
+						<p class="title-sub small" data-ckav-sm="small">Retrouver l'ensemble de nos confections sur le terrain</p>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a href="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a href="#" class="txt-white">Réalisations</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="assets/images/headers/realisation.jpg"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+	
+	<!--
+	************************************************************
+	* PORTFOLIO GRID 01
+	************************************************************ -->
+	
+	<div class="container pd-tb-small" data-ckav-sm="pd-tb-small">
+		
+		<!--=================================
+		= PORTFOLIO GALLERY
+		==================================-->
+		<div class=" w100">
+			<!-- FILTER LIST -->
+			<div class="filter-wrp mr-b-mini align-c">
+				
+				<!-- <div class="col-lg-6 mr-auto" data-ckav-sm="hide">
+					<div class="mr-b-mini">
+						<div class="search-frm">
+							<input class="form-control w100" type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Rechercher">
+							<button type="submit" class="btn btn-dark solid"><i class="fa fa-search"></i></button>
+						</div>
+					</div>
+				</div> -->
+
+				<ul class="inline-grid filters">
+					<div class="tabs-auto tab-style4">
+						<ul class="tb-list bdr-dark">
+							<li (click)="filter('')" class="btn btn-dark mini rd-0 mr-4 bdr-op-1 tb active" data-tb="#12-tb-0">Toutes</li>
+							<li (click)="filter(service.name)" *ngFor="let service of services" class="btn btn-dark mini rd-0 mr-4 bdr-op-1 tb" data-tb="#12-tb-1">{{service.name}}</li>
+						</ul>
+					</div>
+				</ul>
+				<div class="tb-content">
+					<div class="row">
+						<ng-container *ngFor="let portf of filterService | filter:searchKey:'name'">
+							<!-- PORTFOLIO -->
+							<div class="col-lg-4 col-md-6">
+								<div class="info-obj img-t g0 align-l bg-gray mr-b-30">
+									<div class="img"><a [routerLink]="['/réalisations/', portf.id]"><img [src]="portf.image" alt="image"></a></div>
+									<div class="info pd-tiny">
+										<ul class="inline-grid align-l fs12 mr-b-20 grid-mid">
+											<li class="mr-r-10"><span class="tag-text">{{portf.created | date: 'd, MMM, y'}}</span></li>
+											<li><span class="mr-lr-5">|</span></li>
+											<li><a href="http://ckavart.com/">{{portf.service}}</a></li>
+										</ul>
+	
+										<h3 class="fs16 mr-b-10 f-1 bold-4"><a [routerLink]="['/réalisations/', portf.id]" target="_blank">{{portf.title}}</a></h3>
+										<p>{{portf.description}}</p>
+	
+									</div>
+								</div>
+							</div>
+							<!-- / PORTFOLIO -->
+						</ng-container>
+					</div>
+				</div>
+			</div><!-- / FILTER LIST -->
+		</div>
+		<!-- ======= END : =======  -->
+
+	</div>
+	<!-- ************** END : Container **************  -->

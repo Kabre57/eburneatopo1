@@ -1,0 +1,187 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title">{{article.title}}</h1>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a routerLink="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a routerLink="/actualités" class="txt-white">Actualités</a>
+						<b class="mr-lr-5"> / </b>
+						<a class="txt-white">Article</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="assets/images/headers/articles.jpg"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+
+	<!--
+	************************************************************
+	* BLOG SINGLE 01
+	************************************************************ -->
+	<section class="pd-tb-small" data-ckav-sm="pd-tb-small">
+		<div class="container">
+			<div class="row gt60 mb60">
+				
+				<div class="col-lg-9">
+					<p><img [src]="article.image" alt="image"></p>
+					
+					<div [innerHTML]="article.body"></div>
+
+					
+					
+					<!--=================================
+					= TAGS
+					==================================-->
+					<hr>
+					<em *ngFor="let tag of tags">
+						<em *ngFor="let articleTag of article.tags">
+							<a class="btn mr-2 btn-default tiny" [routerLink]="['/actualités/tags/', tag.id]" *ngIf="tag.id === articleTag"> {{tag.name}} </a>
+						</em>
+					</em>
+					<!-- ======= END : TAGS =======  -->
+
+					<!--=================================
+					= SHARING
+					==================================-->
+					<hr>
+					<div class="row gt20 middle-md" data-ckav-sm="align-c">
+						<div class="col-md-6">
+							Share this post : 
+						</div>
+						
+						<div class="col-md-6 align-r" data-ckav-sm="align-c">
+							<a href="#" target="_blank" class="sq40 fs18 mr-r-4 rd-4 iconbox btn-dark"><i class="fab fa-facebook-f"></i></a>
+							<a href="#" target="_blank" class="sq40 fs18 mr-r-4 rd-4 iconbox btn-dark"><i class="fab fa-twitter"></i></a>
+							<a href="#" target="_blank" class="sq40 fs18 mr-r-4 rd-4 iconbox btn-dark"><i class="fab fa-google"></i></a>
+							<a href="#" target="_blank" class="sq40 fs18 mr-r-4 rd-4 iconbox btn-dark"><i class="fab fa-youtube"></i></a>
+							<a href="#" target="_blank" class="sq40 fs18 mr-r-4 rd-4 iconbox btn-dark"><i class="fab fa-tumblr"></i></a>
+						</div>
+					</div>
+					<!-- ======= END : SHARING =======  -->
+
+					<hr>
+
+					<!--=================================
+					= AUTHOR
+					==================================-->
+					<h3 class="title small bold-n">Posted by <a href="#" class="link-default">Oupsum dolor</a></h3>
+					<div class="info-obj img-l g20 medium bdr-1 bdr-op-1 pd-tiny align-l rd-4 mr-b-mini" data-ckav-sm="img-t align-c pd-20">
+						<div class="img"><img src="assets/images/person-01.jpg" class="rd" alt="author"></div>
+						<div class="info">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo error temporibus quos sequi modi maiores pariatur atque ipsum inventore deserunt, eaque placeat corporis voluptas cupiditate? Aut, reiciendis, animi. Minima, inventore.</p>
+							<p>Nemo error temporibus quos sequi modi maiores pariatur atque ipsum inventore deserunt, eaque placeat corporis voluptas cupiditate? Aut, reiciendis, animi. Minima, inventore.</p>
+						</div>
+					</div>
+					<!-- ======= END : AUTHOR =======  -->
+					
+					<!--=================================
+					= COMMENTS
+					==================================-->
+					<h3 class="title small bold-n">4 Comments</h3>
+					<ul class="list-reset mr-b-mini">
+						<li>
+							<div class="info-obj img-l small align-l comment">
+								<div class="img -mr-r-10 mr-t-10 z1"><img src="assets/images/person-02.jpg" class="rd" alt="author"></div>
+								<div class="info rd-4 bg-gray pd-tiny">
+									<h4 class="title mini mr-b-4">Oupsum dolor</h4>
+									<p class="fs12">25 Apr 2016 <span class="mr-lr-10">|</span> <a href="#" class="link-default">Reply</a></p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo error temporibus quos sequi modi maiores pariatur atque ipsum inventore deserunt, eaque placeat corporis voluptas cupiditate? Aut, reiciendis, animi. Minima, inventore.</p>
+								</div>
+							</div>
+
+							<div class="info-obj img-l small align-l comment">
+								<div class="img -mr-r-10 mr-t-10 z1"><img src="assets/images/person-03.jpg" class="rd" alt="author"></div>
+								<div class="info rd-4 bg-gray pd-tiny">
+									<h4 class="title mini mr-b-4">Oupsum dolor</h4>
+									<p class="fs12">25 Apr 2016 <span class="mr-lr-10">|</span> <a href="#" class="link-default">Reply</a></p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo error temporibus quos sequi modi maiores pariatur atque ipsum inventore deserunt, eaque placeat corporis voluptas cupiditate? Aut, reiciendis, animi. Minima, inventore.</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="info-obj img-l small align-l comment">
+								<div class="img -mr-r-10 mr-t-10 z1"><img src="assets/images/person-04.jpg" class="rd" alt="author"></div>
+								<div class="info rd-4 bg-gray pd-tiny">
+									<h4 class="title mini mr-b-4">Oupsum dolor</h4>
+									<p class="fs12">25 Apr 2016 <span class="mr-lr-10">|</span> <a href="#" class="link-default">Reply</a></p>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo error temporibus quos sequi modi maiores pariatur atque ipsum inventore deserunt, eaque placeat corporis voluptas cupiditate? Aut, reiciendis, animi. Minima, inventore.</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- ======= END : COMMETNS =======  -->
+					
+					<!--=================================
+					= COMMENT FORM
+					==================================-->
+					<h2 class="title small mr-b-20 bold-n">Leave a comment</h2>
+					<div class="form-block">
+						<form action="form-data/formdata.php" class="form-widget" data-success-redirect="y" >
+							<div class="field-wrp">
+								<input type="hidden" name="to" value="c.kav.art@gmail.com">
+								<div class="row gt20 mb10">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" data-label="Name" required data-msg="Please enter name." type="text" name="name" placeholder="Enter your name">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" data-label="Email" required data-msg="Please enter email." type="email" name="email" placeholder="Enter your email">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" data-label="Message" required data-msg="Please enter your message." name="message" placeholder="Add your message" cols="30" rows="10"></textarea>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-dark solid"><i class="fa fa-envelope-o"></i> Submit</button>
+						</form>
+					</div>
+					<!-- ======= END : COMMENT FORM =======  -->
+
+				</div>
+				
+				<!--=================================
+				= SIDE BAR
+				==================================-->
+				<div class="col-lg-3" data-ckav-sm="hide">
+
+					<app-side-bar [categories]="categories" [tags]="tags" [photos]="photos"></app-side-bar>
+
+				</div>
+				<!-- ======= END : SLIDE BAR =======  -->
+
+			</div>
+		</div>
+	</section>
+	<!-- ************** END : BLOG SINGLE 01 **************  -->

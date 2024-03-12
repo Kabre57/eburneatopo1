@@ -1,0 +1,134 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title xlarge f-1" data-ckav-sm="medium">{{product.title}}</h1>
+						<p class="title-sub small" data-ckav-sm="small">Passer votre commande en ligne</p>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a href="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a routerLink="/produits" class="txt-white">Produits</a>
+                        <b class="mr-lr-5"> / </b>
+						<a href="#" class="txt-white">Details</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="assets/images/headers/recherche-de-produits.jpg"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+
+<!--
+    ************************************************************
+    * PAGE CONTENT 04
+    ************************************************************ -->
+    <section class="pos-rel pd-tb-medium" data-ckav-sm="pd-tb-medium">
+        <div class="container">
+            <div class="row gt90 mb20">
+               
+    
+                
+                <div class="col-md-6  bdr-op-1">
+                    <!--
+                    ************************************************************
+                    * PORTFOLIO 07
+                    ************************************************************ -->
+                    <section class="pd-0">
+                        <div class="swiper-gallery layout-1" data-autoplay="false">
+
+                            <!-- LARGE IMAGE -->
+                            <div class="swiper-container gallery-top">
+                                <div class="swiper-wrapper vh70">
+
+                                    <ng-container *ngFor="let productPhoto of product.photos">
+                                        <ng-container *ngFor="let photo of photos">
+                                            <!-- IMAGE -->
+                                        <div *ngIf="productPhoto === photo.id" class="swiper-slide" [style.backgroundImage]="'url('+ photo.image +')'"></div>
+                                       </ng-container>
+                                    </ng-container>
+
+                                </div>
+
+                            </div><!-- / LARGE IMAGE -->
+
+                            <!-- THUMB IMAGE -->
+                            <div class="swiper-container gallery-thumbs bg-dark">
+                                <div class="swiper-wrapper">
+                                    <ng-container *ngFor="let productPhoto of product.photos">
+                                        <ng-container *ngFor="let photo of photos">
+                                            <!-- IMAGE -->
+                                        <div *ngIf="productPhoto === photo.id" class="swiper-slide" [style.backgroundImage]="'url('+ photo.image +')'"></div>
+                                       </ng-container>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- ************** END : PORTFOLIO 07 **************  -->
+                    
+                </div>
+
+                <div class="col-md-6 bdr-l">    
+                    <div class="row gt40 mb20">
+                        <div class="col-md-12">
+                            <div class="dez-post-title ">
+                                <h2 class="post-title"><a>{{product.title}}</a></h2>
+                            </div>
+                            <div class="dez-post-text">
+                                <p class="m-b10" [innerHTML]="product.description"></p>
+                            </div>
+                            
+                            <form class="form-widget align-l" novalidate="novalidate" data-ckav-sm="align-c">
+                                <div class="field-wrp mr-b-40">
+                                    <input type="hidden" name="to" value="c.kav.art@gmail.com">
+
+                                    <div class="form-group">
+                                        <input class="form-control bb" data-label="Name" required="" data-msg="Entrer Votre Nom S'il Vous Plaît." type="text" name="name" placeholder="Votre Nom" aria-required="true">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input class="form-control bb" data-label="Email" required="" data-msg="Entrer Votre Email S'il Vous Plaît." type="email" name="email" placeholder="Votre Email" aria-required="true">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input class="form-control bb" required="" data-label="Phone" data-msg="Entrer Votre Numéro De Téléphone S'il Vous Plaît." type="text" name="phone" placeholder="Votre Numéro De Téléphone" aria-required="true">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control bb" data-label="Message" required="" data-msg="Entrer Le Message Lié A Votre Commande S'il Vous Plaît." name="message" placeholder="Salut, j'aimerais passer une commande pour mes activités..." cols="30" rows="5" aria-required="true"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn solid btn-dark f-1 txt-upper bold-2 rd-0 mr-auto"><i class="fa fa-envelope-o"></i> Envoyer Un Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ************** END : PAGE CONTENT 04 **************  -->

@@ -1,0 +1,62 @@
+<!--
+	************************************************************
+	* HEADER
+	************************************************************ -->
+	<header class="main-head dark bg-glass-dark-02" data-sticky="y">
+		<div class="container-fluid bdr-b bdr-op-light-1 min-px-h80">
+			<div class="row gt0 align-items-center head-row">
+
+				<!--=================================
+				= NAVIGATION LINKS
+				==================================-->
+				<div [className]="isOpen ? 'col-lg-5 align-r m-content m-nav open' : 'col-lg-5 align-r m-content m-nav'">
+					<ul class="row gt20 justify-content-md-start mr-0 align-items-center">
+						<li class="col-lg-auto" (click)="clickEvent()">
+							<nav class="menu-wrp align-l f-2 bold-4">
+								<ul class="menu">
+									<li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                        <a  routerLink="/">Accueil</a>
+                                    </li>
+									<li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                        <a  routerLink="/produits">Prestations</a>
+                                    </li>
+									<!-- <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                        <a  routerLink="/réalisations">Réalisations</a>
+                                    </li> -->
+									<li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                        <a  routerLink="/actualités">Actualités</a>
+                                    </li>
+								</ul>
+							</nav>
+						</li>
+					</ul>
+
+				</div><!-- ======= END : NAVIGATION LINKS =======  -->
+				
+				<!--=================================
+				= LOGO SECTION
+				==================================-->
+				<div class="col-lg-2 pos-rel align-c">
+					<a class="nav-handle" data-nav=".m-content" data-navopen="pe-7s-more" data-navclose="pe-7s-close"><i [ngClass]="isOpen ? 'pe-7s-close' : 'pe-7s-more'" (click)="clickEvent()"></i></a>
+					<div class="header-logo-wrp">
+						<a class="header-logo pd-tb-small" href=""><img src="assets/images/logo-light0.png" alt="Brand logo"></a>
+					</div>
+				</div><!-- ======= END : LOGO SECTION =======  -->
+
+				<!--=================================
+				= EXTRA LINKS
+				==================================-->
+				<div [className]="isOpen ? 'col-lg-5 align-r m-content m-nav open' : 'col-lg-5 align-r m-content m-nav'">
+					<ul class="row gt20 justify-content-md-end mr-0 align-items-center">
+						<li (click)="clickEvent()" class="col-lg-auto" data-ckav-sm="pd-0 pd-t-10 align-c">
+							<a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/nos-services" class="btn small bdr-op-light-2 btn-white mr-l-10 f-2 bold-4">Services</a>
+							<a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/a-propos" class="btn small bdr-op-light-2 btn-white mr-l-10 f-2 bold-4">A propos</a>
+                            <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/contactez-nous" class="btn small bdr-op-light-2 btn-white mr-l-10 f-2 bold-4">Contact</a>
+						</li>
+					</ul>
+
+				</div><!-- ======= END : NAVIGATION LINKS =======  -->	
+
+			</div>
+		</div>
+	</header><!-- ************** END : HEADER **************  -->

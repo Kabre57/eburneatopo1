@@ -1,0 +1,142 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title xlarge f-1" data-ckav-sm="medium">Actualités</h1>
+						<p class="title-sub small" data-ckav-sm="small">Retrouver l'ensemble de l'actualité</p>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a href="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a href="#" class="txt-white">Actualités</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" data-bg="assets/images/headers/news.jpg"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+	
+	<!--
+	************************************************************
+	* BLOG LIST GRID 04
+	************************************************************ -->
+	<section class="pos-rel pd-tb-medium" data-ckav-sm="pd-tb-small align-c">
+		<div class="container">
+
+			<div class="row gt60">
+				
+				<!--=================================
+				= BLOG LIST
+				==================================-->
+				<div class="col-lg-9" *ngIf="articles.length > 0">
+					<div class="row" *ngIf="keepTerm === ''">
+						<div class="col-md-6" *ngFor="let article of articles">
+							<!-- BLOG -->
+							<div class="info-obj img-t g30 align-l mr-0">
+								<div class="img"><a [routerLink]="['/actualités/', article.id]"><img [src]="article.image" alt="image"></a></div>
+								<div class="info">
+									<div class="row gt60 row-sep bdr-op-1 mb20">
+										<div class="col-md-3">
+											<p class="fs12 mr-b-10"><span class="tag-text">{{ article.created | date: 'd MMM y' }}</span></p>
+											<p class="fs12 mr-b-6 italic" *ngFor="let user of users"><i class="fs14 mr-r-6 fa fa-user"></i><a>Editeur</a></p>
+											<hr class="mr-tb-10">
+											<p class="fs12 mr-b-6 italic">
+												<i class="fs14 mr-r-6 fa fa-tags"></i>
+												<em *ngFor="let tag of tags">
+													<em *ngFor="let articleTag of article.tags">
+														<a [routerLink]="['/actualités/tags/', tag.id]" *ngIf="tag.id === articleTag"> {{tag.name}}, </a>
+													</em>
+												</em>
+											</p>
+											<hr class="mr-tb-10">
+											<p class="fs12 mr-b-6 italic" *ngFor="let category of categories">
+												<i class="fs14 mr-r-6 fa fa-paperclip" *ngIf="category.id === article.category"></i>
+												<a [routerLink]="['/actualités/categories/', category.id]" *ngIf="category.id === article.category">{{category.name}}</a>
+											</p>
+										</div>
+										
+										<div class="col-md-9">
+											<h3 class="fs16 mr-b-10 f-1 bold-4"><a [routerLink]="['/actualités/', article.id]" target="_blank">{{article.title}}</a></h3>
+											<p>{{article.description}}</p>
+		
+											<a [routerLink]="['/actualités/', article.id]" class="btn btn-default mini">En savoir plus...</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- / BLOG -->
+
+							<hr class="mr-tb-60">
+						</div>
+					</div>
+
+					<div class="row" *ngIf="!(keepTerm === '')">
+						<div class="col-md-6" *ngFor="let article of articles">
+							<!-- BLOG -->
+							<h1>HOUUURA !!!!</h1>
+							<!-- / BLOG -->
+
+							<hr class="mr-tb-60">
+						</div>
+					</div>
+					
+					<div *ngIf="totalPages > 1" class="align-c mr-t-60" data-ckav-sm="mr-t-30">
+						<ul class="inline-grid grid-mid">
+							<li *ngIf="currentPage > 1" class="mr-r-10"><a (click)="prev()" class="btn btn-dark bdr-glass small" data-ckav-sm="mini"><i class="fas fa-long-arrow-alt-left mr-r-4" data-ckav-sm="hide"></i> Prev</a></li>
+							<li *ngFor="let n of numSequence(totalPages); let i = index;"><a (click)="page(i + 1)" data-ckav-sm="mini" [ngClass]="{ 'active':currentPage === i + 1 }" class="btn btn-dark bdr-op-1 mr-lr-5 small">{{i + 1}}</a></li>
+							<li *ngIf="currentPage < totalPages" class="mr-l-10"><a (click)="next()" class="btn btn-dark bdr-glass small">Next <i class="fas fa-long-arrow-alt-right mr-l-4" data-ckav-sm="hide"></i></a></li>
+						</ul>
+					</div>
+
+				</div>
+				<!-- ======= END : BLOG LIST =======  -->
+
+				<div class="col-lg-9" *ngIf="!(articles.length > 0)">
+					<div class="row">
+						<div class="col-md-12">
+							<h3>PAS DISPONIBLE POUR L'INSTANT </h3>
+						</div>
+					</div>
+				</div>
+				
+				<!--=================================
+				= SIDE BAR
+				==================================-->
+				<div class="col-lg-3" data-ckav-sm="hide">
+
+					<app-side-bar (submitted)="onTerm($event)" [categories]="categories" [tags]="tags" [photos]="photos"></app-side-bar>
+
+				</div>
+				<!-- ======= END : SLIDE BAR =======  -->
+
+			</div>
+
+		</div>
+	</section>
+	<!-- ************** END : BLOG LIST GRID 04 **************  -->

@@ -1,0 +1,131 @@
+<!--
+	************************************************************
+	* PAGE HEADER 02
+	************************************************************ -->
+	<header class="pos-rel pd-tb-large flex-cc min-vh-h60" data-ckav-sm="pd-tb-medium">
+		<div class="container typo-light pos-rel z2 pd-b-1">
+
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<div class="content" data-ckav-sm="mr-0">
+						<h1 class="title" data-ckav-sm="medium">{{portfolio.title}}</h1>
+					</div>
+				</div>
+
+				<div class="col-md-6 align-r">
+					<div class="fs14 pd-tb-5 pd-lr-tiny inline-block">
+						<a routerLink="/" class="txt-white">Accueil</a>
+						<b class="mr-lr-5"> / </b>
+						<a routerLink="/réalisations" class="txt-white">Réalisations</a>
+                        <b class="mr-lr-5"> / </b>
+						<a class="txt-white">{{portfolio.title}}</a>
+					</div>
+				</div>				
+			</div>
+		</div>
+
+		<!--=================================
+		= BACKGROUND HOLDER
+		==================================-->
+		<div class="bg-holder full-wh z1">
+			
+			<!-- OVERLAY -->
+			<b data-bgholder="overlay" class="full-wh z4" data-gradient="y" data-g-colors="rgba(0, 0, 0, 0.2)|rgba(0, 0, 0, 1)"></b>
+			
+			<!-- PARALLAX IMAGE -->
+			<div class="jarallax full-wh bg-cover bg-cc z2" data-jparallax="y" data-speed="0.2" [style.backgroundImage]="'url('+ portfolio.image +')'"></div>
+			
+			<!-- BACKGROUND IMAGE -->
+			<b data-bgholder="bg-img" class="full-wh bg-cover bg-cc z1"></b>
+		</div>
+		<!-- ======= END : BACKGROUND HOLDER =======  -->
+
+	</header>
+	<!-- ************** END : PAGE HEADER 01 **************  -->
+    
+    <!--
+	************************************************************
+	* PAGE CONTENT 04
+	************************************************************ -->
+	<section class="pos-rel pd-tb-medium" data-ckav-sm="pd-tb-medium">
+        <div class="container">
+            <div class="row gt90 mb20">
+                <div class="col-md-8">
+                    <p class="title-sub bold-n small"[innerHTML]="portfolio.body"></p>
+
+                    <!--=================================
+                    = Portfolio gallery
+                    ==================================-->
+                    <div class="masonry-wrp w100 mr-auto">
+                        <div class="masonry-grid row popgallery-widget gt0 mb0 ratio-square" data-masonry-grid="y">
+                            <ng-container *ngFor="let portfolioPhoto of portfolio.photos">
+                                <ng-container *ngFor="let photo of photos">
+                                    <!-- ITEM -->
+                                    <div *ngIf="photo.id === portfolioPhoto" class="masonry-item col-md-3">
+                                        <figure>
+                                            <div class="portfolio-item hover-box1">
+                                                <div class="overlay flex-bl typo-light">
+                                                    <div class="content mr-30 z2">
+                                                        <!-- LINKS -->
+                                                        <a href="{{photo.image}}" class="iconbox sq40 bg-default fs24 mr-b-20 pop-img"><i class="pe-7s-expand1"></i></a>
+                                                        <!-- <a href="http://ckavart.com/" target="_blank" class="inline-flex sq40 bg-default flex-cc fs24 mr-b-20"><i class="pe-7s-exapnd2"></i></a> -->
+                                                        
+                                                        <!-- TEXT -->
+                                                        <h3 class="title mini bold-n f-1">{{photo.name}}</h3>
+                                                        <p class="mr-0 fs12 op-08">{{photo.alt}}</p>
+                                                    </div>
+                                                    <b class="full-wh bg-dark op-09 z1 l0"></b>
+                                                </div>
+                                                
+                                                <!-- IMAGE -->
+                                                <b class="full-wh bg-cc bg-cover img-wrp" data-bg="{{photo.image}}" style="background-image: url(&quot;{{photo.image}}&quot;);"></b>
+                                            </div>
+                                        </figure>
+                                    </div>
+                                    <!-- / ITEM -->
+                                </ng-container>
+                            </ng-container>
+
+                        </div>
+                    </div><!-- ======= END : =======  -->
+                </div>
+    
+                
+                <div class="col-md-4 bdr-l bdr-op-1">
+                    <h4 class="title fs14 mr-b-4 f-1">Client</h4>
+                    <p class="title-sub mini mr-0">Consectetur adipisicing</p>
+                    <hr class="mr-tb-10">
+                    <h4 class="title fs14 mr-b-4 f-1">Completed on</h4>
+                    <p class="title-sub mini mr-0">{{portfolio.created | date : 'd MMM y'}}</p>
+                    <hr class="mr-tb-10">
+                    <h4 class="title fs14 mr-b-4 f-1">Services</h4>
+                    <p class="title-sub mini mr-0" *ngFor="let service of services">
+                        <em *ngIf="portfolio.service === service.id">{{service.name}}</em>
+                    </p>
+                    <hr class="mr-tb-10">
+                    <h4 class="title fs14 mr-b-4 f-1">Web</h4>
+                    <p class="title-sub mini mr-0"><a href="#" class="link-default">ckavart.com</a></p>
+                    <hr class="mr-tb-10">
+                    
+                    <!--=========================================
+                    =  SOCIAL LINKS
+                    =============================================-->
+                    <a href="#" target="_blank" class="sq30 fs14 mr-r-4 rd-4 iconbox hov-btn-dark solid bg-glass-dark-01"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="sq30 fs14 mr-r-4 rd-4 iconbox hov-btn-dark solid bg-glass-dark-01"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" class="sq30 fs14 mr-r-4 rd-4 iconbox hov-btn-dark solid bg-glass-dark-01"><i class="fab fa-google"></i></a>
+                    <a href="#" target="_blank" class="sq30 fs14 mr-r-4 rd-4 iconbox hov-btn-dark solid bg-glass-dark-01"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" class="sq30 fs14 mr-r-4 rd-4 iconbox hov-btn-dark solid bg-glass-dark-01"><i class="fab fa-tumblr"></i></a>
+    
+                    <hr class="mr-tb-10">
+    
+                    <ul class="inline-grid gt-tiny">
+                        <li><a href="#" class="sq60 rd-4 fs40 iconbox btn-dark"><i class="fa fa-angle-left"></i></a></li>
+                        <li><a href="#" class="sq60 rd-4 fs30 iconbox btn-dark"><i class="fa fa-th"></i></a></li>
+                        <li><a href="#" class="sq60 rd-4 fs40 iconbox btn-dark"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+	</section>
+	<!-- ************** END : PAGE CONTENT 04 **************  -->

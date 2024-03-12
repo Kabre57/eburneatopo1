@@ -1,0 +1,59 @@
+<ngx-loading-bar color="red" height="4px" [includeSpinner]="false"></ngx-loading-bar>
+<app-header></app-header>
+	
+	<router-outlet></router-outlet>
+
+	<app-footer></app-footer>
+	<!--
+	************************************************************
+	* POPUP 01
+	************************************************************ -->
+	
+	<!-- form : "mfp-hide" Add this class before using -->
+	<div id="popup-content" class="white-popup-block popup-content mfp-hide">
+		<div class="pop-header align-c pd-b-0" data-ckav-sm="pd-20">
+			<p class="sq90 inline-flex flex-cc fs80 mr-0 txt-default"><i class="pe-7s-mail"></i></p>
+			<h2 class="title mr-0" data-ckav-sm="small">DROP US A LINE</h2>
+		</div>
+		<div class="pop-body" data-ckav-sm="pd-20">
+			
+			<div class="form-block">
+				<form action="form-data/formdata.php" class="form-widget">
+					<div class="field-wrp">
+						<input type="hidden" name="to" value="c.kav.art@gmail.com">
+						<div class="form-group">
+							<input class="form-control" data-label="Name" required data-msg="Please enter name." type="text" name="name" placeholder="Enter your name">
+						</div>
+						<div class="form-group">
+							<input class="form-control" data-label="Email" required data-msg="Please enter email." type="email" name="email" placeholder="Enter your email">
+						</div>
+						<div class="form-group">
+							<input class="form-control" required data-label="Phone" data-msg="Please phone number." type="text" name="phone" placeholder="Enter your phone number">
+						</div>
+						<div class="form-group">
+							<input class="form-control" data-label="Subject" required data-msg="Please enter subject." type="text" name="subject" placeholder="Enter subject">
+						</div>
+						<div class="form-group">
+							<input class="form-control datetime-pick" data-label="Date" required data-msg="Please enter date." type="text" name="subject" placeholder="Enter Date">
+						</div>
+						
+						<div class="form-group">
+							<textarea class="form-control" data-label="Message" required data-msg="Please enter your message." name="message" placeholder="Add your message" cols="30" rows="10"></textarea>
+						</div>
+					</div>
+					<button type="submit" class="btn solid btn-default block"><i class="fa fa-envelope-o"></i> SUBMIT</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- ************** END : POPUP 01 **************  -->
+	
+	<!-- GOOGLE FONTS -->
+	<script>
+	/* Use fonts with class name in sequence => f-1, f-2, f-3 .... */
+	var fgroup = [
+		'Playfair Display:400,400i,700,700i,900,900i',
+		'Open Sans:300,300i,400,400i,600,600i,700,700i,800,800i',
+		'Satisfy'
+	];
+	</script>

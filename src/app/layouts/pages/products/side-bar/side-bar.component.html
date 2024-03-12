@@ -1,0 +1,35 @@
+<app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+
+<!-- CATEGORIES -->
+<div class="mr-b-mini">
+    <h3 class="title mini mr-b-10 bold-4 f-1">Categories</h3>
+
+    <ul class="list-reset list-links">
+        <li *ngFor="let category of categories">
+            <a [routerLink]="['/produits/categories/', category.id]"
+            routerLinkActive="router-link-active">{{category.name}}</a>
+        </li>
+    </ul>
+</div>
+<!-- / CATEGORIES -->
+
+
+<!-- SUBSCRIBE -->
+<div class="mr-b-mini">
+    <h3 class="title mini mr-b-10 bold-4 f-1">Newsletters</h3>
+    <p class="op-07 mr-b-10">Subscribe for our monthly newsletter to stay updated</p>
+    <!--
+    ==================================
+    = Newsletter section
+    ==================================-->
+    <div class="subscribe-block _1 small">
+        <form action="form-data/notify-me.php" class="form-widget" data-formtype="newsletter" novalidate="novalidate">
+            <div class="form-group">
+                <button type="submit" data-loading-text="Pleae wait.." class="btn btn-dark bdr-glass"><i class="fas fa-long-arrow-alt-right fs20"></i></button>
+                <input class="form-control w100" data-label="Email" data-msg="Please enter email." type="email" name="email" placeholder="Enter your email">
+            </div>
+        </form>
+    </div><!-- ======= END : Newsletter section =======  -->
+
+</div>
+<!-- / SUBSCRIBE -->

@@ -1,6 +1,7 @@
 import { User } from './user';
 
 export interface Photo {
+  // propriétés de l'utilisateur
   id: number;
   name: string;
   image: string;
